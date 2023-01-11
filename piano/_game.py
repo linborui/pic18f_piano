@@ -12,8 +12,7 @@ FULLSCREEN = False
 surface = None
 
 piano = {}
-piano['keys'] = [pygame.K_a, pygame.K_w, pygame.K_s, pygame.K_e, pygame.K_d,
-                 pygame.K_f, pygame.K_u, pygame.K_j, pygame.K_i, pygame.K_k, pygame.K_o, pygame.K_l]
+piano['keys'] = [pygame.K_a, pygame.K_w, pygame.K_s, pygame.K_e, pygame.K_d, pygame.K_f, pygame.K_u, pygame.K_j, pygame.K_i, pygame.K_k, pygame.K_o, pygame.K_l]
 piano['pressed'] = [False] * len(piano['keys'])
 
 keys = {}
@@ -128,18 +127,13 @@ def draw():
     pygame.draw.rect(surface, (0, 0, 0), (0, 0, WINDOW_WIDTH, WINDOW_HEIGHT))
 
     for i in range(len(keys['white']['idx'])):
-        color = (192, 192, 192) if piano['pressed'][keys['white']['idx'][i]] else (
-            255, 255, 255)
-        pygame.draw.rect(surface, color, (key_edge + keys['white']['width'] * i,
-                         key_start_height, keys['white']['width'] - key_edge * 2, keys['white']['height']))
+        color = (192, 192, 192) if piano['pressed'][keys['white']['idx'][i]] else (255, 255, 255)
+        pygame.draw.rect(surface, color, (key_edge + keys['white']['width'] * i, key_start_height, keys['white']['width'] - key_edge * 2, keys['white']['height']))
 
     for i in range(len(keys['black']['idx'])):
-        color = (50, 50, 50) if piano['pressed'][keys['black']['idx'][i]] else (
-            0, 0, 0)
-        pygame.draw.rect(surface, color, (key_edge / 2 + keys['white']['width'] * keys['black']['pos']
-                         [i], key_start_height, keys['black']['width'] - key_edge * 2, keys['black']['height']))
+        color = (50, 50, 50) if piano['pressed'][keys['black']['idx'][i]] else (0, 0, 0)
+        pygame.draw.rect(surface, color, (key_edge / 2 + keys['white']['width'] * keys['black']['pos'][i], key_start_height, keys['black']['width'] - key_edge * 2, keys['black']['height']))
 
-    pygame.draw.rect(surface, (230, 230, 230), (block_edge + block_width * level,
-                     block_edge, block_width - block_edge * 2, block_height - block_edge * 2))
+    pygame.draw.rect(surface, (230, 230, 230), (block_edge + block_width * level, block_edge, block_width - block_edge * 2, block_height - block_edge * 2))
 
     pygame.display.flip()
