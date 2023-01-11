@@ -1,7 +1,11 @@
 # Pygame Piano
 
-Control piano with keyboard.  
+``` shell
+pip install pygame pyserial
+```
 
-Implemented by pygame  
+Control piano with keyboard or serial communication.  
+
+Implemented by pygame and pyserial.  
 
 ![piano](pic/piano.png)
