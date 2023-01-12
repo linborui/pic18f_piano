@@ -8,7 +8,7 @@ Implemented by PIC18F and Python (pygame, pyserial).
 
 CCP1 - variable resistor (change octave).
 
-RA1~RA7, RB4~RB0 - buttons (C to B).
+RA1-RA7, RB4-RB0 - buttons (C to B).
 
 ## Python
 
